@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patient Dashboard — SmartHospital Queue Tracker">
+    <title>Patient Dashboard — SmartHospital</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="dashboard-nav">
+    <div class="logo">🏥 SmartHospital</div>
+    <div>
+        👤 <span id="navPatientName">Patient</span>
+        <a href="javascript:void(0)" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+
+<main class="dashboard">
+
+    <h1>Welcome, <span id="welcomeName">Patient</span> 👋</h1>
+
+    <p>Manage your hospital visits and track your queue in real time.</p>
+
+
+    <!-- Statistics -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            🎫
+            <h3>Current Token</h3>
+            <strong id="dashTokenId">—</strong>
+        </div>
+
+        <div class="stat-card">
+            👥
+            <h3>Patients Ahead</h3>
+            <strong id="dashAhead">—</strong>
+        </div>
+
+        <div class="stat-card">
+            ⏱️
+            <h3>Estimated Wait</h3>
+            <strong id="dashWait">—</strong>
+        </div>
+
+        <div class="stat-card">
+            🏥
+            <h3>Department</h3>
+            <strong id="dashDept" style="font-size:16px">—</strong>
+        </div>
+
+    </div>
+
+    <!-- Auto-refresh badge -->
+    <p style="color:#94a3b8; font-size:13px; margin-top:10px;">
+        🔄 Queue status auto-refreshes every 30 seconds.
+        <a href="javascript:void(0)" onclick="loadPatientDashboard()" style="color:#2563eb; font-size:13px;">Refresh now</a>
+    </p>
+
+
+    <!-- Main Actions -->
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <h2>🎫 Book Token</h2>
+            <p>Join a department queue and get your token number.</p>
+            <a href="book-token.html" class="dashboard-action-btn">Book Token</a>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>📊 Live Queue</h2>
+            <p>Track your position in the queue in real time.</p>
+            <a href="javascript:void(0)" onclick="loadPatientDashboard()" class="dashboard-action-btn">Refresh Queue</a>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>🚨 Priority Queue</h2>
+            <p>Emergency patients are automatically prioritised.</p>
+            <a href="book-token.html" class="dashboard-action-btn">Check Queue</a>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>🎙️ Voice Assistant</h2>
+            <p>Talk to the AI hospital assistant for help.</p>
+            <a href="voice-assistant.html" class="dashboard-action-btn">Use Voice Assistant</a>
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+    // Set nav name from session
+    const pName = sessionStorage.getItem("patient_name") || "Patient";
+    document.getElementById("navPatientName").textContent = pName;
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

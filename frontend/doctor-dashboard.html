@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doctor Dashboard — SmartHospital Queue Management">
+    <title>Doctor Dashboard — SmartHospital</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="dashboard-nav">
+    <div class="logo">🏥 SmartHospital</div>
+    <div>
+        👨‍⚕️ <span id="doctorName">Doctor</span>
+        <a href="javascript:void(0)" onclick="logout()">Logout</a>
+    </div>
+</nav>
+
+
+<main class="dashboard">
+
+    <h1>Doctor Dashboard 👨‍⚕️</h1>
+
+    <p>Manage your patients and consultation queue. Auto-refreshes every 15 seconds.</p>
+
+
+    <!-- Stats -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            👥
+            <h3>Waiting Patients</h3>
+            <strong id="waitingCount">—</strong>
+        </div>
+
+        <div class="stat-card">
+            🩺
+            <h3>Today's Total</h3>
+            <strong id="todayCount">—</strong>
+        </div>
+
+        <div class="stat-card">
+            ✅
+            <h3>Completed</h3>
+            <strong id="completedCount">—</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Current Patient -->
+
+    <div class="current-patient">
+
+        <h2>📢 Current Patient</h2>
+
+        <h1 id="currentToken">—</h1>
+
+        <p id="currentPatient">Waiting for first patient...</p>
+
+        <button class="login-btn" onclick="callNext()" id="callNextBtn">
+            ✅ Complete &amp; Call Next
+        </button>
+
+    </div>
+
+
+    <!-- Queue Table -->
+
+    <div class="queue-section">
+
+        <h2>📋 Today's Queue
+            <span style="font-size:13px;color:#94a3b8;font-weight:400;margin-left:10px;">
+                (auto-refreshes every 15 sec)
+            </span>
+        </h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Patient</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="queueTableBody">
+                <tr>
+                    <td colspan="4" style="text-align:center;color:#999;">Loading queue...</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

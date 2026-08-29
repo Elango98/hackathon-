@@ -1,0 +1,9 @@
+doctor_id,name,department,password,available,qualification,experience_years
+D001,Dr. Kumar,general,doctor123,yes,MBBS MD,15
+D002,Dr. Priya,cardiology,doctor123,yes,MBBS DM Cardiology,12
+D003,Dr. Ravi,orthopedics,doctor123,yes,MBBS MS Ortho,10
+D004,Dr. Anitha,ent,doctor123,yes,MBBS MS ENT,8
+D005,Dr. Senthil,dermatology,doctor123,yes,MBBS MD Dermatology,6
+D006,Dr. Kavitha,pediatrics,doctor123,yes,MBBS MD Pediatrics,9
+D007,Dr. Balasubramaniam,general,doctor123,yes,MBBS MD,20
+D008,Dr. Divya,cardiology,doctor123,no,MBBS DM Cardiology,7

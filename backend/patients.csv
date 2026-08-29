@@ -1,0 +1,9 @@
+patient_id,name,email,phone,password,dob
+P001,Raj Kumar,raj@hospital.com,9876543210,patient123,1990-05-15
+P002,Priya Sharma,priya@hospital.com,9123456789,priya123,1985-08-22
+P003,Arun Verma,arun@hospital.com,9988776655,arun123,1978-03-10
+P004,Meena Iyer,meena@hospital.com,9456123789,meena123,1992-11-30
+P005,Karthik Rajan,karthik@hospital.com,9871234560,karthik123,1965-07-04
+P006,Lakshmi Devi,lakshmi@hospital.com,9632587410,lakshmi123,1955-12-25
+P007,Suresh Babu,suresh@hospital.com,9741258630,suresh123,1982-04-17
+P008,Anitha Nair,anitha@hospital.com,9852147630,anitha123,1995-09-08

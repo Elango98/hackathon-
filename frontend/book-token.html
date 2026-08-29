@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a hospital token — SmartHospital Queue System">
+    <title>Book Token — SmartHospital</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav class="dashboard-nav">
+
+    <div class="logo">🏥 SmartHospital</div>
+
+    <div>
+        👤 <span id="navPatientName">Patient</span>
+        <a href="patient-dashboard.html">Dashboard</a>
+        <a href="javascript:void(0)" onclick="logout()">Logout</a>
+    </div>
+
+</nav>
+
+
+<!-- Book Token Section -->
+
+<main class="booking-container">
+
+    <div class="booking-header">
+        <h1>🎫 Book Your Token</h1>
+        <p>Select your department and doctor to join the hospital queue.</p>
+    </div>
+
+
+    <!-- Booking Form -->
+
+    <div class="booking-card">
+
+        <form id="tokenForm">
+
+
+            <!-- Department -->
+
+            <div class="form-group">
+
+                <label for="department">🏥 Select Department</label>
+
+                <select id="department" required>
+
+                    <option value="">Choose Department</option>
+                    <option value="general">General Medicine</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="ent">ENT</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="pediatrics">Pediatrics</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Doctor (loaded dynamically) -->
+
+            <div class="form-group">
+
+                <label for="doctor">👨‍⚕️ Select Doctor</label>
+
+                <select id="doctor" required>
+                    <option value="">Select department first</option>
+                </select>
+
+            </div>
+
+
+            <!-- Visit Type -->
+
+            <div class="form-group">
+
+                <label>🗓️ Visit Type</label>
+
+                <div class="visit-options">
+
+                    <label class="visit-option">
+                        <input type="radio" name="visitType" value="appointment" required>
+                        📅 Appointment
+                    </label>
+
+                    <label class="visit-option">
+                        <input type="radio" name="visitType" value="walkin">
+                        🚶 Walk-in
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Symptoms -->
+
+            <div class="form-group">
+
+                <label for="symptoms">📝 Briefly describe your concern</label>
+
+                <textarea
+                    id="symptoms"
+                    rows="3"
+                    placeholder="Example: Fever, headache, regular check-up..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Live Confirmation -->
+
+            <div class="booking-info">
+
+                <div>
+                    <span>🏥 Department</span>
+                    <strong id="selectedDepartment">Not selected</strong>
+                </div>
+
+                <div>
+                    <span>👨‍⚕️ Doctor</span>
+                    <strong id="selectedDoctor">Not selected</strong>
+                </div>
+
+                <div>
+                    <span>⏱️ Est. Wait</span>
+                    <strong>~8 min per patient</strong>
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="confirm-token-btn">
+                🎫 Confirm &amp; Get Token
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Token Result -->
+
+    <div id="tokenResult" class="token-result hidden">
+
+        <div class="success-icon">✅</div>
+
+        <h2>Token Booked Successfully!</h2>
+
+        <p>Please keep your token number for your visit.</p>
+
+        <div class="token-number">
+            <span>Your Token Number</span>
+            <strong id="generatedToken">T001</strong>
+        </div>
+
+        <div class="token-details">
+
+            <div>
+                <span>Department</span>
+                <strong id="resultDepartment">—</strong>
+            </div>
+
+            <div>
+                <span>Doctor</span>
+                <strong id="resultDoctor">—</strong>
+            </div>
+
+            <div>
+                <span>Patients Ahead</span>
+                <strong id="resultAhead">—</strong>
+            </div>
+
+            <div>
+                <span>Estimated Wait</span>
+                <strong id="resultWait">—</strong>
+            </div>
+
+        </div>
+
+        <div class="token-actions">
+
+            <a href="patient-dashboard.html" class="dashboard-btn">
+                ← Back to Dashboard
+            </a>
+
+            <a href="patient-dashboard.html" class="queue-btn">
+                📊 View Live Queue
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+    // Populate nav name from session
+    const navName = sessionStorage.getItem("patient_name");
+    if (navName) document.getElementById("navPatientName").textContent = navName;
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

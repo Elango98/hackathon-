@@ -1,0 +1,12 @@
+token_id,patient_id,patient_name,doctor_id,doctor_name,department,visit_type,symptoms,status,position,created_at
+T001,P003,Arun Verma,D001,Dr. Kumar,general,walkin,Fever and cold,completed,0,2026-08-28 09:00:00
+T002,P004,Meena Iyer,D002,Dr. Priya,cardiology,appointment,Chest pain,completed,0,2026-08-28 09:30:00
+T003,P005,Karthik Rajan,D001,Dr. Kumar,general,walkin,Headache,completed,0,2026-08-28 10:00:00
+T004,P006,Lakshmi Devi,D003,Dr. Ravi,orthopedics,appointment,Knee pain,waiting,1,2026-08-28 10:15:00
+T005,P007,Suresh Babu,D002,Dr. Priya,cardiology,walkin,Palpitations,completed,0,2026-08-28 10:30:00
+T006,P001,Raj Kumar,D002,Dr. Priya,cardiology,appointment,chest pain check,waiting,1,2026-08-28 23:40:48
+T007,P001,Raj Kumar,D001,Dr. Kumar,general,walkin,fever,completed,0,2026-08-29 00:03:32
+T008,P001,Raj Kumar,D001,Dr. Kumar,general,appointment,ijn,completed,0,2026-08-29 00:05:50
+T009,P001,Raj Kumar,D003,Dr. Ravi,orthopedics,appointment,fever,waiting,2,2026-08-29 01:43:31
+T010,P001,Raj Kumar,D002,Dr. Priya,cardiology,walkin,hg8h8,waiting,2,2026-08-29 01:44:09
+T011,P001,Raj Kumar,D002,Dr. Priya,cardiology,appointment,,waiting,3,2026-08-29 06:11:49

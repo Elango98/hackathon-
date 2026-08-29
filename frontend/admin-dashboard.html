@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard — SmartHospital Operations Monitor">
+    <title>Admin Dashboard — SmartHospital</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="dashboard-nav">
+    <div class="logo">🏥 SmartHospital</div>
+    <div>
+        👨‍💼 Admin
+        <a href="index.html">Logout</a>
+    </div>
+</nav>
+
+
+<main class="dashboard">
+
+    <h1>🏥 Hospital Admin Dashboard</h1>
+
+    <p>
+        Monitor the complete hospital patient flow in real time.
+        <a href="javascript:void(0)" onclick="loadAdminDashboard()" style="color:#2563eb; font-size:13px;">Refresh now</a>
+    </p>
+
+
+    <!-- Live Stats -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            👥
+            <h3>Total Patients Today</h3>
+            <strong id="statTotalPatients">—</strong>
+        </div>
+
+        <div class="stat-card">
+            ⏳
+            <h3>Waiting Patients</h3>
+            <strong id="statWaiting">—</strong>
+        </div>
+
+        <div class="stat-card">
+            👨‍⚕️
+            <h3>Doctors Available</h3>
+            <strong id="statDoctors">—</strong>
+        </div>
+
+        <div class="stat-card">
+            🚨
+            <h3>Emergency Cases</h3>
+            <strong id="statEmergency">—</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard Grid -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- Departments -->
+
+        <div class="dashboard-card">
+
+            <h2>🏥 Department Queue</h2>
+
+            <div id="deptQueue">
+                <p>Loading department data...</p>
+            </div>
+
+        </div>
+
+
+        <!-- AI Insights -->
+
+        <div class="dashboard-card">
+
+            <h2>🤖 AI Insights</h2>
+
+            <p>⚠️ High crowd expected in General Medicine.</p>
+
+            <p>💡 Consider opening an additional counter for Cardiology.</p>
+
+            <p>✅ ENT and Dermatology have low patient load.</p>
+
+            <p>📊 Average Wait: <strong id="statAvgWait">—</strong></p>
+
+        </div>
+
+
+        <!-- Patient Flow -->
+
+        <div class="dashboard-card">
+
+            <h2>📊 Patient Flow</h2>
+
+            <p>
+                Completed Consultations Today:
+                <strong id="statCompleted">—</strong>
+            </p>
+
+            <p>
+                Average Waiting Time:
+                <strong id="statAvgWait2">—</strong>
+            </p>
+
+            <p>
+                Total Registered Patients:
+                <strong id="statRegistered">—</strong>
+            </p>
+
+        </div>
+
+
+        <!-- Emergency -->
+
+        <div class="dashboard-card">
+
+            <h2>🚨 Emergency Monitoring</h2>
+
+            <p>
+                Current Emergency Cases:
+                <strong id="statEmergency2">0</strong>
+            </p>
+
+            <p style="color:#94a3b8; font-size:13px;">
+                Emergency patients are automatically pushed to the front of all queues.
+            </p>
+
+            <button onclick="alert('Emergency queue feature coming soon!')">
+                View Emergency Queue
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+<script>
+    // Mirror some stats to secondary elements
+    const origLoad = window.loadAdminDashboard;
+    // Extra wiring for duplicate stat elements
+    const observer = new MutationObserver(() => {
+        const avg1 = document.getElementById("statAvgWait");
+        const avg2 = document.getElementById("statAvgWait2");
+        const em1  = document.getElementById("statEmergency");
+        const em2  = document.getElementById("statEmergency2");
+        const reg  = document.getElementById("statRegistered");
+        if (avg2 && avg1) avg2.textContent = avg1.textContent;
+        if (em2  && em1)  em2.textContent  = em1.textContent;
+    });
+    observer.observe(document.body, { subtree: true, characterData: true, childList: true });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHospital Doctor Login — Manage your patient queue.">
+    <title>Doctor Login — SmartHospital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-icon">👨‍⚕️</div>
+
+        <h1>Doctor Login</h1>
+
+        <p>Access your patient queue and consultations.</p>
+
+        <!-- Error Message -->
+        <div id="loginError" class="error-message" style="display:none;"></div>
+
+        <form onsubmit="doctorLogin(event)">
+
+            <label for="doctorId">Doctor ID</label>
+            <input
+                type="text"
+                id="doctorId"
+                placeholder="e.g. D001"
+                required
+            >
+
+            <label for="doctorPassword">Password</label>
+            <input
+                type="password"
+                id="doctorPassword"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <div class="demo-hint">
+            <p>🔑 <strong>Demo login:</strong></p>
+            <p>Doctor ID: <code>D001</code></p>
+            <p>Password: <code>doctor123</code></p>
+        </div>
+
+        <p class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </p>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard - SmartHospital</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="dashboard-nav">
+
+        <div class="logo">
+            🏥 SmartHospital
+        </div>
+
+        <div class="nav-links">
+
+            <a href="patient-dashboard.html">Dashboard</a>
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <main class="patient-dashboard">
+
+        <!-- Welcome Section -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h1>
+                    Welcome, <span>Patient 👋</span>
+                </h1>
+
+                <p>
+                    Manage your hospital visits and book tokens easily
+                    with our AI Voice Assistant.
+                </p>
+
+            </div>
+
+            <div class="patient-avatar">
+                👤
+            </div>
+
+        </section>
+
+
+        <!-- ================= TOKEN CARDS ================= -->
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🎫
+                </div>
+
+                <div>
+
+                    <p>Current Token</p>
+
+                    <h2>
+                        #A102
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    👨‍⚕️
+                </div>
+
+                <div>
+
+                    <p>Doctor</p>
+
+                    <h2>
+                        Dr. Kumar
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ⏳
+                </div>
+
+                <div>
+
+                    <p>Patients Ahead</p>
+
+                    <h2>
+                        7
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🕐
+                </div>
+
+                <div>
+
+                    <p>Estimated Wait</p>
+
+                    <h2>
+                        35 min
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- TOKEN BOOKING -->
+
+            <div class="booking-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            🎫 Book Hospital Token
+                        </h2>
+
+                        <p>
+                            Select your department and doctor
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="tokenForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Department
+                        </label>
+
+                        <select id="department" required>
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option value="General Medicine">
+                                General Medicine
+                            </option>
+
+                            <option value="Cardiology">
+                                Cardiology
+                            </option>
+
+                            <option value="Orthopedics">
+                                Orthopedics
+                            </option>
+
+                            <option value="Pediatrics">
+                                Pediatrics
+                            </option>
+
+                            <option value="Dermatology">
+                                Dermatology
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Doctor
+                        </label>
+
+                        <select id="doctor" required>
+
+                            <option value="">
+                                Select Doctor
+                            </option>
+
+                            <option value="Dr. Kumar">
+                                Dr. Kumar
+                            </option>
+
+                            <option value="Dr. Priya">
+                                Dr. Priya
+                            </option>
+
+                            <option value="Dr. Raj">
+                                Dr. Raj
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Preferred Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="appointmentDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="book-token-btn"
+                    >
+                        🎫 Book Token
+                    </button>
+
+                </form>
+
+
+                <!-- BOOKING RESULT -->
+
+                <div
+                    id="bookingResult"
+                    class="booking-result"
+                >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= AI ASSISTANT ================= -->
+
+            <div class="assistant-panel">
+
+                <div class="assistant-header">
+
+                    <div class="assistant-title">
+
+                        <div class="ai-avatar">
+                            🤖
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Llama AI Assistant
+                            </h2>
+
+                            <span>
+                                ● Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="voice-status">
+                        🎙️ Voice
+                    </button>
+
+                </div>
+
+
+                <!-- CHAT AREA -->
+
+                <div
+                    class="chat-area"
+                    id="chatArea"
+                >
+
+                    <!-- AI MESSAGE -->
+
+                    <div class="message bot-message">
+
+                        <div class="message-avatar">
+                            🤖
+                        </div>
+
+                        <div class="message-content">
+
+                            <p>
+                                Hello! 👋
+                            </p>
+
+                            <p>
+                                I'm your SmartHospital AI Assistant.
+                            </p>
+
+                            <p>
+                                I can help you book a hospital token,
+                                check your queue position, and provide
+                                appointment information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK QUESTIONS -->
+
+                    <div class="quick-actions">
+
+                        <button
+                            onclick="sendQuickMessage('Book a token for me')"
+                        >
+                            🎫 Book Token
+                        </button>
+
+                        <button
+                            onclick="sendQuickMessage('What is my token status?')"
+                        >
+                            📊 Token Status
+                        </button>
+
+                        <button
+                            onclick="sendQuickMessage('How many patients are ahead of me?')"
+                        >
+                            👥 Queue Status
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TYPING INDICATOR -->
+
+                <div
+                    id="typingIndicator"
+                    class="typing-indicator"
+                >
+                    AI is thinking...
+                </div>
+
+
+                <!-- INPUT AREA -->
+
+                <div class="assistant-input">
+
+                    <input
+                        type="text"
+                        id="userMessage"
+                        placeholder="Ask me anything about your hospital visit..."
+                    >
+
+
+                    <!-- VOICE BUTTON -->
+
+                    <button
+                        id="voiceBtn"
+                        class="voice-btn"
+                        title="Speak"
+                    >
+                        🎙️
+                    </button>
+
+
+                    <!-- SEND BUTTON -->
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+
+                <div class="assistant-footer">
+
+                    🤖 Powered by Llama AI
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const chatArea =
+            document.getElementById("chatArea");
+
+        const userMessage =
+            document.getElementById("userMessage");
+
+        const sendBtn =
+            document.getElementById("sendBtn");
+
+        const voiceBtn =
+            document.getElementById("voiceBtn");
+
+        const typingIndicator =
+            document.getElementById("typingIndicator");
+
+
+        // ==========================================
+        // ADD USER MESSAGE
+        // ==========================================
+
+        function addUserMessage(message) {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "message user-message";
+
+            div.innerHTML = `
+
+                <div class="message-content">
+
+                    <p>${message}</p>
+
+                </div>
+
+                <div class="message-avatar">
+                    👤
+                </div>
+
+            `;
+
+            chatArea.appendChild(div);
+
+            chatArea.scrollTop =
+                chatArea.scrollHeight;
+        }
+
+
+        // ==========================================
+        // ADD AI MESSAGE
+        // ==========================================
+
+        function addBotMessage(message) {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "message bot-message";
+
+            div.innerHTML = `
+
+                <div class="message-avatar">
+                    🤖
+                </div>
+
+                <div class="message-content">
+
+                    <p>${message}</p>
+
+                </div>
+
+            `;
+
+            chatArea.appendChild(div);
+
+            chatArea.scrollTop =
+                chatArea.scrollHeight;
+        }
+
+
+        // ==========================================
+        // SEND MESSAGE
+        // ==========================================
+async function sendMessage() {
+
+    const message = userMessage.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
+    // Show user message
+    addUserMessage(message);
+
+    // Clear input
+    userMessage.value = "";
+
+    // Show typing indicator
+    typingIndicator.style.display = "block";
+
+    try {
+
+        // Send message to Flask backend
+        const response = await fetch(
+            "http://127.0.0.1:5000/chat",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    message: message
+                })
+            }
+        );
+
+        // Check server response
+        if (!response.ok) {
+            throw new Error(
+                "Server error: " + response.status
+            );
+        }
+
+        // Convert response to JSON
+        const data = await response.json();
+
+        // Hide typing indicator
+        typingIndicator.style.display = "none";
+
+        // Display Llama response
+        addBotMessage(data.reply);
+
+    } catch (error) {
+
+        console.error("AI Error:", error);
+
+        // Hide typing indicator
+        typingIndicator.style.display = "none";
+
+        // Show error in chat
+        addBotMessage(
+            "❌ Unable to connect to Llama AI. " +
+            "Please make sure Flask and Ollama are running."
+        );
+    }
+}
+
+        // ==========================================
+        // SEND BUTTON
+        // ==========================================
+
+        sendBtn.addEventListener(
+            "click",
+            sendMessage
+        );
+
+
+        // ==========================================
+        // ENTER KEY
+        // ==========================================
+
+        userMessage.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+        // ==========================================
+        // QUICK MESSAGE
+        // ==========================================
+
+        function sendQuickMessage(message) {
+
+            userMessage.value =
+                message;
+
+            sendMessage();
+
+        }
+
+
+        // ==========================================
+        // VOICE ASSISTANT
+        // ==========================================
+
+        const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
+
+
+        if (SpeechRecognition) {
+
+            const recognition =
+                new SpeechRecognition();
+
+            recognition.lang =
+                "en-IN";
+
+            recognition.continuous =
+                false;
+
+            recognition.interimResults =
+                false;
+
+
+            voiceBtn.addEventListener(
+                "click",
+                function() {
+
+                    recognition.start();
+
+                    voiceBtn.classList.add(
+                        "listening"
+                    );
+
+                    voiceBtn.innerHTML =
+                        "🔴";
+
+                }
+            );
+
+
+            recognition.onresult =
+                function(event) {
+
+                    const speech =
+                        event.results[0][0].transcript;
+
+                    userMessage.value =
+                        speech;
+
+                    sendMessage();
+
+                };
+
+
+            recognition.onend =
+                function() {
+
+                    voiceBtn.classList.remove(
+                        "listening"
+                    );
+
+                    voiceBtn.innerHTML =
+                        "🎙️";
+
+                };
+
+        } else {
+
+            voiceBtn.addEventListener(
+                "click",
+                function() {
+
+                    alert(
+                        "Voice recognition is not supported in this browser."
+                    );
+
+                }
+            );
+
+        }
+
+
+        // ==========================================
+        // TOKEN BOOKING UI
+        // ==========================================
+
+        const tokenForm =
+            document.getElementById("tokenForm");
+
+        const bookingResult =
+            document.getElementById("bookingResult");
+
+
+        tokenForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const department =
+                    document.getElementById(
+                        "department"
+                    ).value;
+
+                const doctor =
+                    document.getElementById(
+                        "doctor"
+                    ).value;
+
+
+                bookingResult.innerHTML = `
+
+                    <div class="success-message">
+
+                        ✅ Token request created!
+
+                        <br><br>
+
+                        Department:
+                        <strong>${department}</strong>
+
+                        <br>
+
+                        Doctor:
+                        <strong>${doctor}</strong>
+
+                        <br><br>
+
+                        Your token will be generated
+                        from the hospital queue.
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
